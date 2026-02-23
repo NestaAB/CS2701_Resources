@@ -78,7 +78,7 @@ public class DatabaseInit implements CommandLineRunner{
 
 		//------------- OrderItems & Orders ------------
 		
-		//Order
+		//Orders
 		Order order1 = new Order(user1);
 		orderRepository.save(order1);
 
