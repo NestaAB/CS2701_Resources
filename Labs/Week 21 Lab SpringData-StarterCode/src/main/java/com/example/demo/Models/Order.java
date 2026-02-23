@@ -1,5 +1,7 @@
 package com.example.demo.Models;
 
+//import java.util.ArrayList;
+import java.util.List;
 import java.util.Date;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -14,6 +16,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 
@@ -33,6 +36,10 @@ public class Order {
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="buyer")
     private User buyer;
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> items;
+
 
 
     public Order() {
